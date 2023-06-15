@@ -26,7 +26,7 @@ class NotesServices {
     const isSuccess = this._notes.filter((notes) => notes.id === id).length > 0;
 
     if (!isSuccess) {
-      throw new InvariantError('Catatan gagal ditambahkan'); // penambahan InvariantError
+      throw new InvariantError('Catatan gagal ditambahkan');
     }
 
     return id;
@@ -39,7 +39,6 @@ class NotesServices {
   getNoteById(id) {
     const note = this._notes.filter((n) => n.id === id)[0];
     if (!note) {
-      // diubah menjadi Custom Error
       throw new NotFoundError('Catatan tidak ditemukan');
     }
     return note;
@@ -67,7 +66,6 @@ class NotesServices {
     const index = this._notes.findIndex((note) => note.id === id);
 
     if (index === -1) {
-      // diubah menjadi Custom Error
       throw new NotFoundError('Catatan gagal dihapus. Id tidak ditemukan');
     }
 
