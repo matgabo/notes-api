@@ -1,2 +1,2 @@
 # notes-app-back-end
-latihan membuat notes app
+latihan membuat rest api notes app sederhana
