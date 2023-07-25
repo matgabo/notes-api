@@ -22,7 +22,7 @@ class NotesService {
     const updatedAt = createdAt;
 
     const query = {
-      text: 'INSERT INTO notes VALUES($1, $2, $3, $4, $5, $6, $7) RETURNING id',
+      text: 'INSERT INTO notes (id, title, body, tags, created_at, updated_at, owner) VALUES($1, $2, $3, $4, $5, $6, $7) RETURNING id',
       values: [id, title, body, tags, createdAt, updatedAt, owner],
     };
 
@@ -49,7 +49,7 @@ class NotesService {
 
   async getNoteById(id) {
     const query = {
-      text: `SELECT notes.*, users.username
+      text: `SELECT notes.id, notes.title, notes.tags, notes.body, users.username
       FROM notes
       LEFT JOIN users ON users.id = notes.owner
       WHERE notes.id = $1`,

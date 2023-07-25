@@ -67,7 +67,7 @@ class UsersService {
     const result = await this._pool.query(query);
 
     if (!result.rows.length) {
-      throw new AuthenticationsError('Kredensial yang anda berikan salah');
+      throw new AuthenticationsError('Kredensial yang Anda berikan salah');
     }
 
     const { id, password: hashedPassword } = result.rows[0];
@@ -75,7 +75,7 @@ class UsersService {
     const match = await bcrypt.compare(password, hashedPassword);
 
     if (!match) {
-      throw new AuthenticationsError('Kredensial yang anda berikan salah');
+      throw new AuthenticationsError('Kredensial yang Anda berikan salah');
     }
 
     return id;
