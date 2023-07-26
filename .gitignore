@@ -1,5 +1,2 @@
 node_modules
-notes-api-webserver.pem
 .env
-.prod.env
-pem_permission.txt
