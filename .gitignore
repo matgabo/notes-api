@@ -3,3 +3,4 @@ notes-api-webserver.pem
 .env
 .prod.env
 pem_permission.txt
+src/api/uploads/file
